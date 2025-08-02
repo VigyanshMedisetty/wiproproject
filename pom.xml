@@ -27,6 +27,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>nexusRepo</id>
+      <name>Releases</name>
+      <url>http://18.206.254.120:8081/repository/wiproproject-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexusRepo</id>
+      <name>Snapshot</name>
+      <url>http://18.206.254.120:8081/repository/wiproproject-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <build>
     <finalName>wiproproject</finalName>
