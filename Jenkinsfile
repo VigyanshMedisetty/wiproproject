@@ -30,12 +30,10 @@ pipeline {
         }
         stage('tomcat deploy') {
             steps {
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'tomcat8-dev', 
-                transfers: [sshTransfer(cleanRemote: false, excludes: '', 
-                execCommand: '''/opt/tomcat8/bin/shutdown.sh /opt/tomcat8/bin/startup.sh''', 
-                execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, 
-                removePrefix: 'target/', sourceFiles: 'target/*.war')], 
-                usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'tomcat8-dev', sshCredentials: [encryptedPassphrase: '{AQAAABAAAAAQ1Ua8pNGJBBKDisFv1uC2hIXRPx5K2os9LtEB/CBsw24=}', 
+				key: '', keyPath: '', username: 'robot'], transfers: [sshTransfer(cleanRemote: false, excludes: '', 
+				execCommand: '''/opt/tomcat8/bin/shutdown.sh /opt/tomcat8/bin/startup.sh''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, 
+				removePrefix: 'target/', sourceFiles: 'target/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
     }
