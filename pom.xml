@@ -31,12 +31,12 @@
     <repository>
       <id>nexusRepo</id>
       <name>Releases</name>
-      <url>http://54.211.223.133:8081/repository/wiproproject-releases/</url>
+      <url>http://172.31.89.247:8081/repository/wiproproject-releases/</url>
     </repository>
     <snapshotRepository>
       <id>nexusRepo</id>
       <name>Snapshot</name>
-      <url>http://54.211.223.133:8081/repository/wiproproject-snapshots/</url>
+      <url>http://172.31.89.247:8081/repository/wiproproject-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 
