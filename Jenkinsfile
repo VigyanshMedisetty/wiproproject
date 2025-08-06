@@ -30,7 +30,7 @@ pipeline {
         }
         stage('tomcat deploy') {
             steps {
-                sshagent(['']) {
+                sshagent(credentials:['robot']) {
 					// copy of the war file to tomcat webapps
 					sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@54.156.90.238:/opt/tomcat8/webapps/wiproproject.war"
 					// stop and start tomcat server
